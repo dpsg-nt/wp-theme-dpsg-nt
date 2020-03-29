@@ -7,3 +7,7 @@
  Version:      0.1
  Text Domain:  dpsg-nuertingen
 */
+
+/** change font size to Roboto Slab */
+@import url("./css/jannik.css");
+@import url("./css/jakob.css");
