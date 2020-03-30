@@ -13,3 +13,4 @@ require_once('lib/google-analytics.php');
 require_once('shortcodes/google-calendar.php');
 require_once('shortcodes/stufen-banner.php');
 require_once('shortcodes/leader-overview.php');
+require_once('shortcodes/redirect.php');

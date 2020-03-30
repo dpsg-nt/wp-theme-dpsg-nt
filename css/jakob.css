@@ -1,7 +1,30 @@
+.wp-block-columns {
+    margin-bottom: 0;
+}
+.wp-block-column,
+.space-after-section {
+    margin-bottom: 28px;
+}
+
+@media (max-width: 979px) {
+    #sidebar {
+        margin-top: 28px;
+    }
+}
+
+article.post h3:first-of-type {
+    font-size: 0.9em;
+    color: #555;
+    font-style: italic;
+}
+article.post h3:first-of-type a {
+    color: #555;
+}
 
 .content .wp-block-button__link,
 .content .wp-block-button__link:hover,
-.content .wp-block-button__link:visited {
+.content .wp-block-button__link:visited,
+.wpforms-submit {
     display: inline-block;
     padding: 6px 12px;
     margin-bottom: 0;
@@ -28,15 +51,19 @@
     text-decoration: none;
 }
 
-
 .content .wp-block-button__link:active,
 .content .wp-block-button__link:focus,
-.content .wp-block-button__link:hover {
+.content .wp-block-button__link:hover,
+.wpforms-submit:hover {
     background: #4c6e88;
     border-color: #fff;
     color: #fff;
 }
 
 .author-post {
+    display: none;
+}
+
+section#comments {
     display: none;
 }
