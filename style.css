@@ -242,7 +242,9 @@ article.post .entry a img {
 }
 
 .termine img,
-.termine-legende img  {
+.termine-legende img,
+.post .termine img,
+.post .termine-legende img {
   padding-right: 5px;
   height: 20px;
   border: 0;
