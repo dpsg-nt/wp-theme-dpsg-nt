@@ -1,0 +1,19 @@
+name: deploy-to-netcup
+on:
+  push:
+    branches: [ master ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: setup SSH
+      env: { SSH_AUTH_SOCK: /tmp/ssh_agent.sock }
+      run: |
+        mkdir -p ~/.ssh
+        ssh-keyscan ${{ secrets.NETCUP_SSH_HOST }} >> ~/.ssh/known_hosts
+        ssh-agent -a $SSH_AUTH_SOCK
+        ssh-add - <<< "${{ secrets.NETCUP_SSH_KEY }}"
+
+    - name: Trigger deploy via ssh
+      env: { SSH_AUTH_SOCK: /tmp/ssh_agent.sock }
+      run: ssh ${{ secrets.NETCUP_SSH_USER }}@${{ secrets.NETCUP_SSH_HOST }} "cd httpdocs/wordpress/wp-content/themes/dpsg-child && git fetch && git reset --hard origin/master"
