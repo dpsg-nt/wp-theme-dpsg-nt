@@ -74,46 +74,6 @@ function shortcode_google_calendar($attr) {
 
     ob_start();
     ?>
-
-    <style>
-      .termine table {
-        width: 100%;
-        border-spacing: 0;
-        border: 5px solid #fff;
-        box-shadow: 0px 1px 0px #ccd6dd;
-      }
-      
-      .termine thead tr,
-      .termine tbody tr:nth-child(even) {
-        background: #fff;
-      }
-      
-      .termine td {
-        padding: 10px;
-      }
-      
-      .termine td.title {
-        width: 50%;
-      }
-
-      .termine.slim .tn {
-        max-width: 115px;
-      }
-      
-      .termine .legende {
-        padding-top: 10px;
-      }
-
-      .termine img,
-      .termine-legende img  {
-        padding-right: 5px;
-        height: 20px;
-        border: 0;
-        box-shadow: none;
-      };
-    </style>
-
-    
     <div class="termine<?php if($slim) echo ' slim' ?>">
         <table>
             <?php if (!$slim) { ?>

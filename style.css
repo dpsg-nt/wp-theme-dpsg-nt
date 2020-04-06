@@ -8,11 +8,299 @@
  Text Domain:  dpsg-nuertingen
 */
 
+/* better font for our page */
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab:400,700&display=swap");
+h1,
+h2,
+h3,
+h4,
+.nav,
+.post blockquote {
+  font-family: Roboto Slab !important;
+}
+
 /** change font size to Roboto Slab */
 @import url("./css/jannik.css");
 @import url("./css/jakob.css");
 
 /** frame for Instagram feed */
 #sbi_images {
- background: white;
+  background: white;
+}
+
+/* increase height for header to fit the background */
+.site-header {
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  background-position: center bottom;
+  background-size: cover;
+}
+.site-header .nav-social a {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* nicer multi-column margins in posts/pages when viewing on mobile screens */
+.wp-block-columns {
+  margin-bottom: 0;
+}
+.wp-block-column,
+.space-after-section {
+  margin-bottom: 28px;
+}
+
+@media (max-width: 979px) {
+  #sidebar {
+    margin-top: 28px;
+  }
+}
+
+/* reduce size of article post date */
+article.post h3:first-of-type {
+  font-size: 0.9em;
+  color: #555;
+  font-style: italic;
+}
+article.post h3:first-of-type a {
+  color: #555;
+}
+
+/* button link style on several places */
+.content .wp-block-button__link,
+.content .wp-block-button__link:hover,
+.content .wp-block-button__link:visited,
+.wpforms-submit,
+.site-footer li a {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+
+  border-color: #ccd6dd;
+  background: #ffffff;
+  color: #003056;
+  text-decoration: none;
+}
+.content .wp-block-button__link:active,
+.content .wp-block-button__link:focus,
+.content .wp-block-button__link:hover,
+.wpforms-submit:hover,
+.site-footer li a:hover {
+  background: #4c6e88;
+  border-color: #fff;
+  color: #fff;
+}
+
+/* footer */
+.site-footer ul {
+  list-style-type: none;
+}
+.site-footer ul li a {
+  margin-bottom: 5px;
+  width: 100%;
+  text-align: left;
+}
+
+/* hide author and comments */
+.author-post {
+  display: none;
+}
+section#comments {
+  display: none;
+}
+
+/* show menu indicator everytime */
+.nav ul .current-menu-ancestor a:after {
+  display: block;
+}
+
+#sidebar > ul {
+  margin-top: 0 !important;
+}
+
+article.post .entry a img {
+  max-width: 100%;
+  height: auto;
+  border: 5px solid #fff;
+  box-shadow: 0px 1px 0px #ccd6dd;
+}
+
+/* slider */
+.slider {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 20px;
+}
+
+.n2-ss-slider-1 {
+  box-shadow: 0px 0px 5px 0px #ccc !important ;
+  border: 10px solid #fff !important;
+}
+
+/* leaders */
+.post .entry .leader-overview ul {
+  margin: 0;
+}
+.leader-overview ul li {
+  display: inline-block;
+  list-style: none;
+  margin: 0 10px 10px 0;
+  width: 200px;
+  padding: 5px;
+  background-color: white;
+}
+
+.leader-overview ul li a {
+  text-decoration: none;
+}
+
+.leader-overview ul li a div {
+  font-family: "Roboto Slab", serif;
+  color: #003056;
+}
+
+.leader-overview ul li div.position {
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.post .entry .leader-overview ul li img {
+  border: none;
+  box-shadow: none;
+  margin-bottom: 5px;
+}
+
+.leader-overview ul li:hover,
+.leader-overview ul li:hover div {
+  background-color: #003056;
+  color: white;
+}
+
+.post.leader img {
+  width: 180px;
+  float: right;
+}
+
+.leader span {
+  display: block;
+  font-weight: bold;
+  font-family: Roboto Slab;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.leader .back-to-parent-page {
+  margin-bottom: 20px;
+  display: block;
+}
+
+/* styles for integrated google calendar */
+
+.termine table {
+  width: 100%;
+  border-spacing: 0;
+  border: 5px solid #fff;
+  box-shadow: 0px 1px 0px #ccd6dd;
+}
+
+.termine thead tr,
+.termine tbody tr:nth-child(even) {
+  background: #fff;
+}
+
+.termine td {
+  padding: 10px;
+}
+
+.termine td.title {
+  width: 50%;
+}
+
+.termine.slim .tn {
+  max-width: 115px;
+}
+
+.termine .legende {
+  padding-top: 10px;
+}
+
+.termine img,
+.termine-legende img  {
+  padding-right: 5px;
+  height: 20px;
+  border: 0;
+  box-shadow: none;
+}
+
+/* stufen banner on the right */
+.stufen-banner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: calc(100% + 10px);
+  margin-left: -5px;
+}
+.stufen-banner .stufe {
+  width: calc(50% - 10px);
+  margin: 5px;
+  position: relative;
+}
+.stufen-banner .stufe.woe { border: 4px solid #ff6600; }
+.stufen-banner .stufe.jupfi { border: 4px solid #2f53a7; }
+.stufen-banner .stufe.pfadi { border: 4px solid #00823c; }
+.stufen-banner .stufe.rover { border: 4px solid #cc1f2f; }
+
+.stufen-banner .stufe img.bild {
+  max-width: 100%;
+  max-height: 100%;
+}
+.stufen-banner .stufe img.lilie {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -25px;
+  margin-left: -25px;
+  width: 50px;
+  opacity: 0.75;
+}
+.stufen-banner .stufe div {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  background-color: rgba(0,0,0,0.5);
+  color: #fff;
+  text-decoration: none;
+
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+.stufen-banner .name {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+.stufen-banner .stufe:hover div {
+  display: flex;
 }

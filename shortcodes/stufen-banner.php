@@ -3,64 +3,6 @@ function dpsgnt_stufen_banner_shortcode($atts)
 {
     ob_start();
 ?>
-    <style>
-        /** stufen-banner */
-        .stufen-banner {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            width: calc(100% + 10px);
-            margin-left: -5px;
-        }
-        .stufen-banner .stufe {
-            width: calc(50% - 10px);
-            margin: 5px;
-            position: relative;
-        }
-        .stufen-banner .stufe.woe { border: 4px solid #ff6600; }
-        .stufen-banner .stufe.jupfi { border: 4px solid #2f53a7; }
-        .stufen-banner .stufe.pfadi { border: 4px solid #00823c; }
-        .stufen-banner .stufe.rover { border: 4px solid #cc1f2f; }
-
-        .stufen-banner .stufe img.bild {
-            max-width: 100%;
-            max-height: 100%;
-        }
-        .stufen-banner .stufe img.lilie {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            margin-top: -25px;
-            margin-left: -25px;
-            width: 50px;
-            opacity: 0.75;
-        }
-        .stufen-banner .stufe div {
-            display: none;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
-
-            background-color: rgba(0,0,0,0.5);
-            color: #fff;
-            text-decoration: none;
-
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            right: 0;
-        }
-        .stufen-banner .name {
-            font-weight: bold;
-            font-size: 1.1em;
-        }
-        .stufen-banner .stufe:hover div {
-            display: flex;
-        }
-    </style>
-
     <div class="stufen-banner">
         <a href="/gruppen/woelflinge" class="stufe woe">
             <img src="<?= get_stylesheet_directory_uri(); ?>/images/stufen-banner/woelflinge_cat.jpg" class="bild" alt="Wölflinge (6-10 Jahre)">
