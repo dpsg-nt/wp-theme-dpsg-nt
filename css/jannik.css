@@ -94,3 +94,9 @@ article.post .entry a img {
   margin-bottom: 20px;
   display: block;
 }
+
+/** white frame for Smash Balloon Instagram Feed */
+#sbi_images {
+  background: white;
+}
+
