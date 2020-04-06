@@ -11,3 +11,8 @@
 /** change font size to Roboto Slab */
 @import url("./css/jannik.css");
 @import url("./css/jakob.css");
+
+/** frame for Instagram feed */
+#sbi_images {
+ background: white;
+}
