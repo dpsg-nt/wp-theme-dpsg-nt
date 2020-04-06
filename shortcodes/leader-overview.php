@@ -99,7 +99,7 @@ function dpsgnt_leader_overview_shortcode($atts)
     <div class='leader-overview'>
         <?php
 
-        $category_slugs =  array('stammesvorstand', 'woelflinge', 'jungpfadfinder', 'pfadfinder', 'rover', 'mitarbeiter', 'ehemalige');
+        $category_slugs =  array('stammesvorstand', 'woelflinge', 'jungpfadfinder', 'pfadfinder', 'rover', 'mitarbeiter');
 
         foreach ($category_slugs as $category_slug) :
             $category = get_term_by('slug', $category_slug, 'leader-category')
