@@ -26,6 +26,7 @@ h4,
 /** frame for Instagram feed */
 #sbi_images {
   background: white;
+  box-shadow: 0px 1px 0px #ccd6dd;
 }
 
 /* increase height for header to fit the background */
