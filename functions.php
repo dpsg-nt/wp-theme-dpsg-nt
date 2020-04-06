@@ -9,6 +9,7 @@ require_once('configuration.php');
 
 require_once('lib/mime-types.php');
 require_once('lib/google-analytics.php');
+require_once('lib/header-background.php');
 
 require_once('shortcodes/google-calendar.php');
 require_once('shortcodes/stufen-banner.php');

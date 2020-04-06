@@ -1,3 +1,16 @@
+.site-header {
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    background-position: center bottom;
+    background-size: cover;
+}
+.site-header .nav-social a {
+    background-color: rgba(255,255,255,0.3);
+}
+
 .wp-block-columns {
     margin-bottom: 0;
 }
@@ -24,7 +37,8 @@ article.post h3:first-of-type a {
 .content .wp-block-button__link,
 .content .wp-block-button__link:hover,
 .content .wp-block-button__link:visited,
-.wpforms-submit {
+.wpforms-submit,
+.site-footer li a {
     display: inline-block;
     padding: 6px 12px;
     margin-bottom: 0;
@@ -54,10 +68,20 @@ article.post h3:first-of-type a {
 .content .wp-block-button__link:active,
 .content .wp-block-button__link:focus,
 .content .wp-block-button__link:hover,
-.wpforms-submit:hover {
+.wpforms-submit:hover,
+.site-footer li a:hover {
     background: #4c6e88;
     border-color: #fff;
     color: #fff;
+}
+
+.site-footer ul {
+    list-style-type: none;
+}
+.site-footer ul li a {
+    margin-bottom: 5px;
+    width: 100%;
+    text-align: left;
 }
 
 .author-post {

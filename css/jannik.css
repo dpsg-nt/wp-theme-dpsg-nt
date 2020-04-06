@@ -38,48 +38,59 @@ article.post .entry a img {
   border: 10px solid #fff !important;
 }
 
-
-
-
 /** leaders */
 .post .entry .leader-overview ul {
-	margin: 0;
+  margin: 0;
 }
 .leader-overview ul li {
-	display: inline-block;
-	list-style: none;
-	margin: 0 10px 10px 0; 
-	width:200px; 
-	padding:5px;
-	background-color: white; 
+  display: inline-block;
+  list-style: none;
+  margin: 0 10px 10px 0;
+  width: 200px;
+  padding: 5px;
+  background-color: white;
 }
 
-.leader-overview ul li a p {
-	font-family: "Roboto Slab", serif;
-	padding: 0 5px;
-	color: #003056;
-	text-decoration: none;
+.leader-overview ul li a {
+  text-decoration: none;
 }
 
-.leader-overview ul li p.name {
-	margin-bottom: 5px;
+.leader-overview ul li a div {
+  font-family: "Roboto Slab", serif;
+  color: #003056;
 }
 
-.leader-overview ul li p.position {
-	font-weight: 300;
-	clear: both;
-	font-size: 14px;
+.leader-overview ul li div.position {
+  font-size: 14px;
+  line-height: 18px;
 }
 
 .post .entry .leader-overview ul li img {
-	border: none;
-	box-shadow: none;
-	margin-bottom: 8px;
-	max-width: 100%;
+  border: none;
+  box-shadow: none;
+  margin-bottom: 5px;
 }
 
 .leader-overview ul li:hover,
-.leader-overview ul li:hover p {
-	background-color: #003056;
-	color: white;
+.leader-overview ul li:hover div {
+  background-color: #003056;
+  color: white;
+}
+
+.post.leader img {
+  width: 180px;
+  float: right;
+}
+
+.leader span {
+  display: block;
+  font-weight: bold;
+  font-family: Roboto Slab;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.leader .back-to-parent-page {
+  margin-bottom: 20px;
+  display: block;
 }

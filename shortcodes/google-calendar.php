@@ -21,6 +21,14 @@ function renderDate($jsonDate, $end = false) {
 	return renderWeekday($dt->format('w')) . ' ' . $dt->format('d.m.Y');
 }
 
+function renderTime($jsonDate, $end = false) {
+	$dateStr = isset($jsonDate->dateTime) ? $jsonDate->dateTime : $jsonDate->date;
+	$timestamp = strtotime($dateStr);
+	$dt = new DateTime("now", new DateTimeZone('Europe/Berlin'));
+	$dt->setTimestamp($timestamp - ($end ? (60 * 60 * 12) : 0));
+	return $dt->format('H:i'). ' Uhr';
+}
+
 function getDurationInHours($startJsonDate, $endJsonDate) {
 	$startStr = isset($startJsonDate->dateTime) ? $startJsonDate->dateTime : $startJsonDate->date;
 	$endStr = isset($endJsonDate->dateTime) ? $endJsonDate->dateTime : $endJsonDate->date;
@@ -129,8 +137,17 @@ function shortcode_google_calendar($attr) {
                     <tr>
                         <td>
                             <b><?=$item->summary;?></b><br>
-                            <i><?php echo (($durationInHours <= 24) ? renderDate($item->start, $slim)
-                            : (renderDate($item->start) . ' -<br>' . renderDate($item->end, true))); ?></i>
+                            <i>
+                            <?php
+                            if ($durationInHours <= 4) {
+                              echo renderDate($item->start, $slim) . ', ' . renderTime($item->start);
+                            } else if ($durationInHours <= 24) {
+                              echo renderDate($item->start, $slim);
+                            } else {
+                              echo renderDate($item->start) . ' -<br>' . renderDate($item->end, true);
+                            }
+                            ?>
+                            </i>
                             
                         </td>
                         <td class="tn">
@@ -145,8 +162,15 @@ function shortcode_google_calendar($attr) {
                     <?php } else { ?>
                     <tr>
                         <td>
-                            <?php echo (($durationInHours <= 24) ? renderDate($item->start, $slim)
-                            : (renderDate($item->start) . ' -<br>' . renderDate($item->end, true))); ?>
+                            <?php
+                            if ($durationInHours <= 4) {
+                              echo renderDate($item->start, $slim) . '<br>' . renderTime($item->start);
+                            } else if ($durationInHours <= 24) {
+                              echo renderDate($item->start, $slim);
+                            } else {
+                              echo renderDate($item->start) . ' -<br>' . renderDate($item->end, true);
+                            }
+                            ?>
                         </td>
                         <td class="title"><b><?=$item->summary;?></b></td>
                         <td class="tn">
