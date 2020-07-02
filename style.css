@@ -309,11 +309,11 @@ article.post .entry a img {
 }
 
 /* Styling for "Accordion Blocks" plugin */
-h2.c-accordion__title:after {
+.post h2.c-accordion__title:after {
   margin-top: -2px;
   right: 10px;
 }
-h2.c-accordion__title {
+.post h2.c-accordion__title {
   font-weight: normal;
   background-color: #fff;
   padding: 10px 30px 10px 10px;
