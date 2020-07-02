@@ -319,3 +319,6 @@ article.post .entry a img {
   padding: 10px 30px 10px 10px;
   margin-bottom: 5px;
 }
+.post .c-accordion__content {
+  padding: 0 10px;
+}
