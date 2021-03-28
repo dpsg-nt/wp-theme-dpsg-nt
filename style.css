@@ -59,12 +59,12 @@ h4,
 }
 
 /* reduce size of article post date */
-article.post h3:first-of-type {
+article.post > h3:first-of-type {
   font-size: 0.9em;
   color: #555;
   font-style: italic;
 }
-article.post h3:first-of-type a {
+article.post > h3:first-of-type a {
   color: #555;
 }
 
