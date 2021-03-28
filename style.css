@@ -322,3 +322,22 @@ article.post .entry a img {
 .post .c-accordion__content {
   padding: 0 10px;
 }
+
+/* Full width YouTube embed */
+.wp-block-embed-youtube {
+  overflow: hidden;
+  position: relative;
+  max-width: 100%;
+  height: auto;
+  padding-bottom: 56.25%;
+}
+
+.wp-block-embed-youtube iframe,
+.wp-block-embed-youtube object,
+.wp-block-embed-youtube embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
