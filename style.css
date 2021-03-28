@@ -331,7 +331,9 @@ article.post .entry a img {
   height: auto;
   padding-bottom: 56.25%;
 }
-
+.wp-block-embed-youtube .wp-block-embed__wrapper {
+  position: initial;
+}
 .wp-block-embed-youtube iframe,
 .wp-block-embed-youtube object,
 .wp-block-embed-youtube embed {
