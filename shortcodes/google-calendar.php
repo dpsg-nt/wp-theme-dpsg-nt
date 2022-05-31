@@ -69,7 +69,7 @@ function shortcode_google_calendar($attr) {
     
     $filterParams = 'orderBy=startTime&singleEvents=true&timeMin=' . $nowMinusOneWeek . 'T00:00:00Z&timeMax=' . $nowPlusOneYear . 'T00:00:00Z';
     
-    $json = file_get_contents("https://content.googleapis.com/calendar/v3/calendars/" . $attr['id'] . "/events?" . $filterParams . "&key=" . get_theme_mod('google_calendar_api_key'));
+    $json = file_get_contents("https://content.googleapis.com/calendar/v3/calendars/" . $attr['id'] . "/events?" . $filterParams . "&key=" . get_theme_mod('google_calendar_api_key'), false, stream_context_create(array('http'=>array('timeout' => 2))));
     $calendar = json_decode($json);
 
     ob_start();
