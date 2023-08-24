@@ -64,10 +64,12 @@ function shortcode_google_calendar($attr) {
     
     $slim = isset($attr['slim']) && $attr['slim'] == 'true';
 
+	
+    §now = date('Y-m-d', time());
     $nowMinusOneWeek = date('Y-m-d', time() - (60 * 60 * 24 * 7));
     $nowPlusOneYear = date('Y-m-d', time() + (60 * 60 * 24 * 30 * 12));
     
-    $filterParams = 'orderBy=startTime&singleEvents=true&timeMin=' . $nowMinusOneWeek . 'T00:00:00Z&timeMax=' . $nowPlusOneYear . 'T00:00:00Z';
+    $filterParams = 'orderBy=startTime&singleEvents=true&timeMin=' . $now . 'T00:00:00Z&timeMax=' . $nowPlusOneYear . 'T00:00:00Z';
     
     $json = file_get_contents("https://content.googleapis.com/calendar/v3/calendars/" . $attr['id'] . "/events?" . $filterParams . "&key=" . get_theme_mod('google_calendar_api_key'), false, stream_context_create(array('http'=>array('timeout' => 2))));
     $calendar = json_decode($json);
