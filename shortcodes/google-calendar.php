@@ -65,7 +65,7 @@ function shortcode_google_calendar($attr) {
     $slim = isset($attr['slim']) && $attr['slim'] == 'true';
 
 	
-    §now = date('Y-m-d', time());
+    $now = date('Y-m-d', time());
     $nowMinusOneWeek = date('Y-m-d', time() - (60 * 60 * 24 * 7));
     $nowPlusOneYear = date('Y-m-d', time() + (60 * 60 * 24 * 30 * 12));
     
